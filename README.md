@@ -275,7 +275,7 @@ The test fails if there any values less than minimum or more than maximum.
 Copy and paste the code below at the end of mytests.py file.
 ```
 test6={
-  "testname":"Check for min and max",
+        "testname":"Check for min and max",
 	"test":check_for_min_max,
 	"column": "quarter",
 	"table": "DimMonth",
