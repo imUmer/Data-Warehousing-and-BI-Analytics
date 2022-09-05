@@ -528,7 +528,7 @@ You should see an output as seen in the image below.
 You are encouraged to run more sql queries. When done type `quit` to exit db2cli.
 
 ### All commands here
-**Note down all the data mention bellow from your DB2**  
+**Note down all the data mention bellow from your IBM Cloud DB2**  
 ```
 	"database_name":"[your-DB2-database-name]"
       	"hostname": "[your-DB2-host]",
@@ -536,13 +536,6 @@ You are encouraged to run more sql queries. When done type `quit` to exit db2cli
         "username": "[your-DB2-usename]"
         "password": "[your-DB2-password]",
 ```
-
-
->	"database_name":"[your-DB2-database-name]"
-   >   	"hostname": "[your-DB2-host]",
-  >     "port": "[your-DB2-port]",
-   >    "username": "[your-DB2-usename]"
-    >   "password": "[your-DB2-password]",
 
 ```
 db2cli writecfg add -database [your-DB2-database-name] -host [your-DB2-host] -port [your-DB2-port] -parameter "SecurityTransportMode=SSL"
@@ -571,8 +564,31 @@ db2cli execsql -dsn production -user [your-DB2-usename] -passwd [your-DB2-passwo
 select count(*) from DimMonth;
 ```
 
+# Pratice Exercise
+ 
+> Using the db2cli interactive shell, find the count of rows in the table FactBilling
+<details>
+  <summary>Solution+</summary>
+  > Using the db2cli interactive shell, find the count of rows in the table FactBilling
+</details>
 
+> Using the Cloud UI (not db2cli), create a simple MQT named avg_customer_bill with fields customerid and averagebillamount.
+> 
+<details>
+  <summary>Solution+</summary>
+  
 
+  2. Bar
+     * Baz
+     * Qux
+
+  ### Some Code
+  ```js
+  function logSomething(something) {
+    console.log('Something', something);
+  }
+  ```
+</details>
 
 
 
