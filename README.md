@@ -101,7 +101,11 @@ Your data warehouse staging area is now ready.
 
 
 # Hands-on Lab 2: Verifying Data Quality for a Data Warehouse
+## link of Lab 
+```
+[link](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Verifying%20Data%20Quality%20for%20a%20Data%20Warehouse/Verifying%20Data%20Quality%20for%20a%20Data%20Warehouse.md.html)
 
+```
 ## In this lab you will practice how to create and run data quality tests.
 
 Step 1: Start the postgresql server.
@@ -188,8 +192,11 @@ Open the file mytests.py in the editor by using the steps below.
 ![image](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Verifying%20Data%20Quality%20for%20a%20Data%20Warehouse/images/file-open.png)
 
 ![image](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Verifying%20Data%20Quality%20for%20a%20Data%20Warehouse/images/select-mytests.py.png)
+
 You should now see the file opened in the editor.
+
 ![image](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Verifying%20Data%20Quality%20for%20a%20Data%20Warehouse/images/mytests.py.png)
+
 The file mytests.py contains all the data quality tests.
 
 It provides a quick and easy way to author and run new data quality tests.
