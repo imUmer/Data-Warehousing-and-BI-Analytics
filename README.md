@@ -529,13 +529,21 @@ You are encouraged to run more sql queries. When done type `quit` to exit db2cli
 
 ### All commands here
 **Note down all the data mention bellow from your DB2**  
-`
-	"database name":"[your-DB2-database-name]"
+```
+	"database_name":"[your-DB2-database-name]"
       	"hostname": "[your-DB2-host]",
         "port": "[your-DB2-port]",
         "username": "[your-DB2-usename]"
         "password": "[your-DB2-password]",
-`
+```
+
+
+>	"database_name":"[your-DB2-database-name]"
+   >   	"hostname": "[your-DB2-host]",
+  >     "port": "[your-DB2-port]",
+   >    "username": "[your-DB2-usename]"
+    >   "password": "[your-DB2-password]",
+
 ```
 db2cli writecfg add -database [your-DB2-database-name] -host [your-DB2-host] -port [your-DB2-port] -parameter "SecurityTransportMode=SSL"
 db2cli writecfg add -dsn production -database [your-DB2-database-name] -host [your-DB2-host] -port [your-DB2-port]
