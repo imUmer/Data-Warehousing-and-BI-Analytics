@@ -572,7 +572,7 @@ select count(*) from DimMonth;
 	  hint
 	</summary>
 
-	> Using the db2cli interactive shell, find the count of rows in the table FactBilling
+	>> Using the db2cli interactive shell, find the count of rows in the table FactBilling
 
 </details>
 
