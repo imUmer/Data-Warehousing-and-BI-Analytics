@@ -527,6 +527,41 @@ You should see an output as seen in the image below.
 
 You are encouraged to run more sql queries. When done type `quit` to exit db2cli.
 
+### All commands here
+**Note down all the data mention bellow from your DB2**  
+`
+	"database name":"[your-DB2-database-name]"
+      	"hostname": "[your-DB2-host]",
+        "port": "[your-DB2-port]",
+        "username": "[your-DB2-usename]"
+        "password": "[your-DB2-password]",
+`
+```
+db2cli writecfg add -database [your-DB2-database-name] -host [your-DB2-host] -port [your-DB2-port] -parameter "SecurityTransportMode=SSL"
+db2cli writecfg add -dsn production -database [your-DB2-database-name] -host [your-DB2-host] -port [your-DB2-port]
+db2cli validate -dsn production -connect -user [your-DB2-usename] -passwd [your-DB2-password] 
+
+wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Populating%20a%20Data%20Warehouse/star-schema.sql
+db2cli execsql -dsn production -user [your-DB2-usename] -passwd [your-DB2-password] -inputsql star-schema.sql
+
+wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Populating%20a%20Data%20Warehouse/DimCustomer.sql
+
+wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Populating%20a%20Data%20Warehouse/DimMonth.sql
+
+wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Populating%20a%20Data%20Warehouse/FactBilling.sql
+
+ls *.sql
+
+db2cli execsql -dsn production -user [your-DB2-usename] -passwd [your-DB2-password] -inputsql DimCustomer.sql
+db2cli execsql -dsn production -user [your-DB2-usename] -passwd [your-DB2-password] -inputsql DimMonth.sql
+db2cli execsql -dsn production -user [your-DB2-usename] -passwd [your-DB2-password] -inputsql FactBilling.sql
+
+wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Populating%20a%20Data%20Warehouse/verify.sql
+db2cli execsql -dsn production -user [your-DB2-usename] -passwd [your-DB2-password] -inputsql verify.sql
+
+db2cli execsql -dsn production -user [your-DB2-usename] -passwd [your-DB2-password]
+select count(*) from DimMonth;
+```
 
 
 
