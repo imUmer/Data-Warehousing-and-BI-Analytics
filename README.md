@@ -590,7 +590,7 @@ select count(*) from DimMonth;
 
  ## Problem 2:
 > Using the Cloud UI (not db2cli), create a simple MQT named avg_customer_bill with fields customerid and averagebillamount.
-
+<details>
   <summary> 
 	  hint
 	</summary>
@@ -623,7 +623,7 @@ Clck the `Run All` Button to run the statement. You should see status as `Succes
 
  ## Problem 3:
 > Refresh the newly created MQT
-
+<details>
   <summary> 
 	  hint
 	</summary>
@@ -647,7 +647,7 @@ Clck the `Run All` Button to run the statement. You should see status as `Succes
 
  ## Problem 4:
 > Using the newly created MQT find the customers whose average billing is more than 11000.
-
+<details>
   <summary> 
 	  hint
 	</summary>
