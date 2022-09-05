@@ -389,7 +389,7 @@ If you do not have an instance of IBM DB2 on cloud, follow the instructions in t
 ## Exercise 2 - Create service credentials
 To access your IBM DB2 cloud instance from external programs, you need service credentials.
 
-If you do not have service credentials, follow the instructions in this lab to create your service credentials.
+If you do not have service credentials, follow the instructions in this [lab](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DB0201EN-SkillsNetwork/labs/Lab%2008%20-%20Create%20Db2%20Service%20Credentials/instructions.md.html?utm_medium=Exinfluencer&utm_source=Exinfluencer&utm_content=000026UJ&utm_term=10006555&utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDB0260ENSkillsNetwork27338483-2022-01-01) to create your service credentials.
 
 Make a note of the following details:
 
@@ -411,7 +411,7 @@ In this exercise we will be creating a dsn (data source name). A dsn in short is
 
 Creating a dsn is two step process.
 
-​ Step 1: We add the database, host, port and the security mode details. A sample commmand is given for your reference below:
+​ Step 1: We add the database, host, port and the security mode details. A sample commmand is given for your reference below: 
 
 `db2cli writecfg add -database dbname -host hostname -port 50001 -parameter "SecurityTransportMode=SSL"`
 
