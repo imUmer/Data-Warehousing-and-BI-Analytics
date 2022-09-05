@@ -44,25 +44,33 @@ You should see an output like this.
 
 ![alt ide](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Setting%20up%20a%20staging%20area/images/postgres-createdb.png)
 
-#Exercise 3 - Create data warehouse schema
+# Exercise 3 - Create data warehouse schema
 Step 1: Download the schema files.
 
 The commands to create the schema are available in the file below.
-(https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Setting%20up%20a%20staging%20area/billing-datawarehouse.tgz) Run the commands below to download and extract the schema files.
+
+[Download file from here](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Setting%20up%20a%20staging%20area/billing-datawarehouse.tgz) 
+
+OR
+Run the commands below to download and extract the schema files.
+
 ```
 wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Setting%20up%20a%20staging%20area/billing-datawarehouse.tgz
 
 tar -xvzf billing-datawarehouse.tgz
 ls *.sql
 ```
+
 You should see 4 .sql files listed in the output
 
 Step 2: Create the schema
 
 Run the command below to create the schema in the billingDW database.
+
 ```
 psql  -h localhost -U postgres -p 5432 billingDW < star-schema.sql
 ```
+
 You should see an output similar to the one below.
 ![alt IDE]![image](https://user-images.githubusercontent.com/57424391/188310412-56181628-478d-4503-bd0a-d87a46ef4726.png)
 
@@ -370,14 +378,154 @@ python3 generate-data-quality-report.py
 ```
 
 
+# Hands-on Lab: Populating a Data Warehouse
+[Lab Assesment](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Populating%20a%20Data%20Warehouse/Populating%20a%20dataware%20house.md.html)
 
+## Exercise 1 - Create an instance of IBM DB2 on cloud
+We will be using the cloud instance of IBM DB2 as a production data warehouse in this lab.
 
+If you do not have an instance of IBM DB2 on cloud, follow the instructions in this lab to create one.
 
+## Exercise 2 - Create service credentials
+To access your IBM DB2 cloud instance from external programs, you need service credentials.
 
+If you do not have service credentials, follow the instructions in this lab to create your service credentials.
 
+Make a note of the following details:
 
+- user
+- password
+- host
+- port
+- database name
+You will need them later in this lab.
 
+## Exercise 3 - Create a db2cli dsn
+You can access the IBM DB2 cloud instance using the web browser user interface.
 
+Using the `db2cli` you can access your cloud IBM DB2 instance from the command line.
+
+db2cli can be very helpful in automating data load tasks.
+
+In this exercise we will be creating a dsn (data source name). A dsn in short is a simple name that refers to a data source.
+
+Creating a dsn is two step process.
+
+​ Step 1: We add the database, host, port and the security mode details. A sample commmand is given for your reference below:
+
+`db2cli writecfg add -database dbname -host hostname -port 50001 -parameter "SecurityTransportMode=SSL"`
+
+Step 2: We give a name to the data source we just created. This dsn name helps us to easily point to the IBM DB2 instance. A sample commmand is given for your reference below.
+
+`db2cli writecfg add -dsn dsn_name -database dbname -host hostname -port 50001`
+
+Run the commands below on the terminal to create a dsn named `production`. Make sure you use the database name, host and port details you noted in exercise 2.
+
+```
+db2cli writecfg add -database BLUDB -host 0c77d6f2-5da9-48a9-81f8-86b520b87518.bs2io90l08kqb1od8lcg.databases.appdomain.cloud -port 31198 -parameter "SecurityTransportMode=SSL"
+
+db2cli writecfg add -dsn production -database BLUDB -host 0c77d6f2-5da9-48a9-81f8-86b520b87518.bs2io90l08kqb1od8lcg.databases.appdomain.cloud -port 31198
+```
+You should see an output similar to the one below.
+
+![alt figure1](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Populating%20a%20Data%20Warehouse/images/add-dsn.png)
+
+## Exercise 4 - Verify a db2cli dsn
+Now that the dsn is created, we need to verify if it is working, before we go ahead and start using it.
+
+The generic syntax for the command to verify the dsn is given below:
+
+`db2cli validate -dsn alias -connect -user userid -passwd password`
+
+Run the command below to verify the production dsn. Make sure you use your username and password that you noted in Exercise 2.
+
+```
+db2cli validate -dsn production -connect -user jrg38634 -passwd SuWySBe5Y4MsYnh9
+```
+
+You should see an output similar to the one below.
+
+![alt](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Populating%20a%20Data%20Warehouse/images/dsn-validation.png)
+
+Your dsn is validated. You can now use it to access the IBM DB2 cloud instance.
+
+## Exercise 5 - Create the schema on production data warehouse
+Step 1: Download the schema file.
+
+Run the command below to download the schema file.
+
+```
+wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Populating%20a%20Data%20Warehouse/star-schema.sql
+```
+Step 2: Create the schema.
+
+Run the command below to create the schema on the production data warehouse. Make sure you use your username and password that you noted down in Exercise 2.
+```
+db2cli execsql -dsn production -user jrg38634 -passwd SuWySBe5Y4MsYnh9 -inputsql star-schema.sql
+```
+The command above tells db2cli to run the commands in the file star-schema.sql on the production data warehouse.
+
+## Exercise 6 - Populate the production data warehouse
+Step 1: Download the data files.
+
+Run the commands below to download the data files.
+
+```
+wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Populating%20a%20Data%20Warehouse/DimCustomer.sql
+
+wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Populating%20a%20Data%20Warehouse/DimMonth.sql
+
+wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Populating%20a%20Data%20Warehouse/FactBilling.sql
+
+ls *.sql
+```
+
+Step 2: Load the data in the data warehouse.
+
+Run the commands below to load the data on to the production data warehouse. Make sure you use your username and password that you noted in Exercise 2.
+
+```
+db2cli execsql -dsn production -user jrg38634 -passwd SuWySBe5Y4MsYnh9 -inputsql DimCustomer.sql
+db2cli execsql -dsn production -user jrg38634 -passwd SuWySBe5Y4MsYnh9 -inputsql DimMonth.sql
+db2cli execsql -dsn production -user jrg38634 -passwd SuWySBe5Y4MsYnh9 -inputsql FactBilling.sql
+```
+
+## Exercise 7 - Verify the data on the production data warehouse
+Step 1: Download the verification sql file.
+
+Run the command below to download the sql file to verify the data.
+```
+wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Populating%20a%20Data%20Warehouse/verify.sql
+```
+Step 2: Verify the data in the data warehouse.
+
+Run the command below to verify the data on the production data warehouse. Make sure you use your username and password that you noted down in Exercise 2.
+```
+db2cli execsql -dsn production -user jrg38634 -passwd SuWySBe5Y4MsYnh9 -inputsql verify.sql
+```
+You have successfully loaded the data, if you see an output similar to the one below.
+
+![alt](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Populating%20a%20Data%20Warehouse/images/verify.png)
+
+Exercise 8 - Work with db2cli interactive command line
+db2cli can also be used interactively.
+
+Run the command below to open an interactive sql command shell to your production data warehouse. Make sure you use your username and password that you noted in Exercise 2.
+```
+db2cli execsql -dsn production -user jrg38634 -passwd SuWySBe5Y4MsYnh9
+```
+
+![alt](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Populating%20a%20Data%20Warehouse/images/db2-cli-interactive1.png)
+
+Run the command below on the db2cli.
+```
+select count(*) from DimMonth;
+```
+You should see an output as seen in the image below.
+
+![alt](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Populating%20a%20Data%20Warehouse/images/db2cli-interactive2.png)
+
+You are encouraged to run more sql queries. When done type `quit` to exit db2cli.
 
 
 
