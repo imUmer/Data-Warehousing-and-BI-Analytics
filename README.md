@@ -565,22 +565,20 @@ select count(*) from DimMonth;
 ```
 
 # Pratice Exercise
- 
+ ## Problem 1:
 > Using the db2cli interactive shell, find the count of rows in the table FactBilling
 <details>
   <summary> 
 	  hint
 	</summary>
 	
-	```
         Use the select statement along with count function on the table FactBilling_.
-	```
 	
 </details>
 
 
 <details>
-  <summary>Solution+</summary>
+  <summary>Solution</summary>
   
   At the db2cli prompt, run the following sql statement:
    
@@ -590,6 +588,82 @@ select count(*) from DimMonth;
 	
 </details>
 
+ ## Problem 2:
+> Using the Cloud UI (not db2cli), create a simple MQT named avg_customer_bill with fields customerid and averagebillamount.
+
+  <summary> 
+	  hint
+	</summary>
+	
+        use the `create table` command
+	
+</details>
 
 
+<details>
+  <summary>Solution</summary>
+  
+ Access the UI for DB2, go to the Run SQL screen, in the editor, copy the following command:
+   
+  ```sql
+	  CREATE TABLE avg_customer_bill (customerid, averagebillamount) AS
+	(select customerid, avg(billedamount)
+	from factbilling
+	group by customerid
+	)
+	     DATA INITIALLY DEFERRED
+	     REFRESH DEFERRED
+	     MAINTAINED BY SYSTEM;
+  ```
+	
+</details>
 
+Clck the `Run All` Button to run the statement. You should see status as `Success` on the Result section.
+
+
+ ## Problem 3:
+> Refresh the newly created MQT
+
+  <summary> 
+	  hint
+	</summary>
+	
+        use the `refresh table` command
+	
+</details>
+
+
+<details>
+  <summary>Solution</summary>
+  
+ At the db2cli prompt, run the following command:
+   
+  ```sql
+	 refresh table avg_customer_bill;
+  ```
+	
+</details>
+
+
+ ## Problem 4:
+> Using the newly created MQT find the customers whose average billing is more than 11000.
+
+  <summary> 
+	  hint
+	</summary>
+	
+        use the select statement on the MQT with a where clause on the column averagebillamount
+	
+</details>
+
+
+<details>
+  <summary>Solution</summary>
+  
+ At the db2cli prompt, run the following command:
+   
+  ```sql
+	 select * from avg_customer_bill where averagebillamount > 11000;
+  ```
+	
+</details>
