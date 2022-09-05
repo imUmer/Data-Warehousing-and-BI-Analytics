@@ -568,8 +568,8 @@ select count(*) from DimMonth;
  
 > Using the db2cli interactive shell, find the count of rows in the table FactBilling
 <details>
-  <summary>Solution+</summary>
-  > Using the db2cli interactive shell, find the count of rows in the table FactBilling
+  <summary>*hint*</summary>
+>  Using the db2cli interactive shell, find the count of rows in the table FactBilling
 </details>
 
 > Using the Cloud UI (not db2cli), create a simple MQT named avg_customer_bill with fields customerid and averagebillamount.
