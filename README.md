@@ -102,10 +102,9 @@ Your data warehouse staging area is now ready.
 
 # Hands-on Lab 2: Verifying Data Quality for a Data Warehouse
 ## link of Lab 
-```
-[link](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Verifying%20Data%20Quality%20for%20a%20Data%20Warehouse/Verifying%20Data%20Quality%20for%20a%20Data%20Warehouse.md.html)
-
-```
+ 
+[Lab Assesment](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Verifying%20Data%20Quality%20for%20a%20Data%20Warehouse/Verifying%20Data%20Quality%20for%20a%20Data%20Warehouse.md.html)
+ 
 ## In this lab you will practice how to create and run data quality tests.
 
 Step 1: Start the postgresql server.
