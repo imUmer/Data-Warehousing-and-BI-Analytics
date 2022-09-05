@@ -571,27 +571,23 @@ select count(*) from DimMonth;
   <summary> 
 	  hint
 	</summary>
-
-	>> Using the db2cli interactive shell, find the count of rows in the table FactBilling
-
+	
+	```
+        Use the select statement along with count function on the table FactBilling_.
+	```
+	
 </details>
 
-> Using the Cloud UI (not db2cli), create a simple MQT named avg_customer_bill with fields customerid and averagebillamount.
-> 
+
 <details>
   <summary>Solution+</summary>
   
-
-  2. Bar
-     * Baz
-     * Qux
-
-  ### Some Code
-  ```js
-  function logSomething(something) {
-    console.log('Something', something);
-  }
+  At the db2cli prompt, run the following sql statement:
+   
+  ```sql
+  select count(*) from FactBilling;
   ```
+	
 </details>
 
 
