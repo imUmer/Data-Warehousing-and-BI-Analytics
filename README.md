@@ -837,11 +837,24 @@ Execute the sql statement below to populate the MQT countrystats
 ![Ali](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/3.C.3.png)
 
 
+https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%205%20-%20Different%20Methods%20for%20Creating%20Dashboard%20Visualizations%20with%20Cognos%20Analytics/instructions.md.html
 
+# Hands-on Lab 5: Different Methods for Creating Dashboard Visualizations with Cognos Analytics
+[Lab Assesment here](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%205%20-%20Different%20Methods%20for%20Creating%20Dashboard%20Visualizations%20with%20Cognos%20Analytics/instructions.md.html)
 
+Dataset Used in this Lab
+The dataset used in this lab comes from the VM designed to showcase IBM Cognos Analytics. This dataset is published by IBM. You can download the dataset file directly from here: [CustomerLoyaltyProgram.csv](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%205%20-%20Different%20Methods%20for%20Creating%20Dashboard%20Visualizations%20with%20Cognos%20Analytics/CustomerLoyaltyProgram.csv)
 
+## Exercise 1 : Work with Tabs and Start a New Dashboard within Tabs
+In this exercise, you will learn how to work with tabs and start a new dashboard within tabs.
 
+To sign in to the Cognos Analytics platform with your IBMid, go to [myibm.ibm.com/dashboard/.](https://myibm.ibm.com/dashboard/?utm_medium=Exinfluencer&utm_source=Exinfluencer&utm_content=000026UJ&utm_term=10006555&utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDeveloperSkillsNetworkDV0130ENSkillsNetwork20531073-2022-01-01)
 
+Enter your IBMid and password.
+
+Scroll down and click **Launch**.
+
+![ALT](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%205%20-%20Different%20Methods%20for%20Creating%20Dashboard%20Visualizations%20with%20Cognos%20Analytics/images/1.3.png)
 
 
 
