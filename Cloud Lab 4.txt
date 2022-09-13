@@ -1,0 +1,86 @@
+Postgresql FE: https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/BIWorkaroundFiles/week2/Querying_dw_cubes_rollups_groupingsets_MQT.md.html?origin=www.coursera.org
+
+
+Grouped set:
+select year, category, sum(billedamount) as TotalBilledAmount from factbilling 
+left join dimcustomer on factbilling.customerid = dimcustomer.customerid
+left join dimmonth on factbilling.monthid = dimmonth.monthid
+group by grouping sets(year,category)
+order by year, category
+
+Cube:
+
+select year,category, sum(billedamount) as totalbilledamount
+from factbilling
+left join dimcustomer
+on factbilling.customerid = dimcustomer.customerid
+left join dimmonth
+on factbilling.monthid=dimmonth.monthid
+group by cube(year,category)
+order by year, category
+
+Rollup:
+
+select year,category, sum(billedamount) as totalbilledamount
+from factbilling
+left join dimcustomer
+on factbilling.customerid = dimcustomer.customerid
+left join dimmonth
+on factbilling.monthid=dimmonth.monthid
+group by rollup(year,category)
+order by year, category
+
+MQT ~ Materialized Query Tables: 
+CREATE TABLE countrystats (country, year, totalbilledamount) AS
+  (select country, year, sum(billedamount)
+from factbilling
+left join dimcustomer
+on factbilling.customerid = dimcustomer.customerid
+left join dimmonth
+on factbilling.monthid=dimmonth.monthid
+group by country,year)
+     DATA INITIALLY DEFERRED
+     REFRESH DEFERRED
+     MAINTAINED BY SYSTEM;
+
+Pratice:
+
+select * from PZV36979.countrystate;
+refresh table PZV36979.countrystate;
+
+create TABLE countrystate (country, year, totalbilledamount) as (
+SELECT country, year, sum(billedamount) from factbilling 
+left join dimcustomer on factbilling.customerid = dimcustomer.customerid
+left join dimmonth on factbilling.monthid = dimmonth.monthid group by country, year)
+
+DATA INITIALLY DEFERRED
+     REFRESH DEFERRED
+     MAINTAINED BY SYSTEM;
+
+
+
+--select year, quartername, sum(billedamount) as totalbilledamount from 
+--factbilling 
+--left join DimMONTH on factbilling.monthid = dimmonth.monthid
+--left join DIMCUSTOMER on factbilling.customerid = dimcustomer.customerid
+--group by grouping sets(year, quartername);
+
+
+CREATE TABLE average_billamount (year, quarter, category, country,average_bill_amount ) as 
+(select year, quarter, category, country, avg(billedamount) as average_bill_amount  from 
+factbilling 
+left join dimcustomer
+on factbilling.customerid = dimcustomer.customerid
+left join dimmonth
+on factbilling.monthid = dimmonth.monthid 
+    GROUP BY year, quarter, category, country)
+    DATA INITIALLY DEFERRED
+     REFRESH DEFERRED
+     MAINTAINED BY SYSTEM;
+refresh table average_billamount;
+select * from average_billamount;
+
+
+
+
+

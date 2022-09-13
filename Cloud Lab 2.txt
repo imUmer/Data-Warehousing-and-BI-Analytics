@@ -1,0 +1,44 @@
+IDE : https://labs.cognitiveclass.ai/v2/tools/cloud-ide-kubernetes?ulid=ulid-97370f8920930274cf9356b1f00b386b789167ea
+Doc : https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Setting%20up%20a%20staging%20area/Setting%20up%20a%20staging%20area.md.html
+
+1. start_postgres
+
+2. createdb -h localhost -U postgres -p 5432 billingDW
+
+3. The commands to create the schema are available in the file below.
+link: https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Working%20with%20Facts%20and%20Dimension%20Tables/star-schema.sql
+Step 1: Download the schema files.
+
+The commands to create the schema are available in the file below.
+
+https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Setting%20up%20a%20staging%20area/billing-datawarehouse.tgz Run the commands below to download and extract the schema files.
+
+wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Setting%20up%20a%20staging%20area/billing-datawarehouse.tgz
+
+tar -xvzf billing-datawarehouse.tgz
+ls *.sql
+
+You should see 4 .sql files listed in the output
+
+Step 2: Create the schema
+
+Run the command below to create the schema in the billingDW database.
+
+psql  -h localhost -U postgres -p 5432 billingDW < star-schema.sql
+
+Exercise 4 -
+
+
+
+4. Create the schema
+Run the command below to create the schema in the under billingDW database.
+psql  -h localhost -U postgres -p 5432 billingDW < star-schema.sql
+
+
+*******************************************************************************
+
+SnowFlake Schema 
+
+1. due to its multiple layers of branching which resembles a snowflake pattern.
+2. Much like how pointers are used to point to memory locations
+3. in computing, normalization reduces the memory footprint of the data.

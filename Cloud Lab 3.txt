@@ -1,0 +1,20 @@
+Postgresql FE :https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/BIWorkaroundFiles/week2/Populating_datawarehouse_with_postgres.md.html
+
+--create table avg_customer_bill ( 
+--	customerid int,
+--	averagebillamount money
+--	
+--);
+--CREATE TABLE avg_customer_bill (customerid, averagebillamount) AS
+--(select customerid, avg(billedamount)
+--from factbilling
+--group by customerid
+--)
+--     DATA INITIALLY DEFERRED
+--     REFRESH DEFERRED
+--     MAINTAINED BY SYSTEM;
+--refresh table avg_customer_bill;
+--select * from avg_customer_bill where averagebillamount > 11000;
+select * from PZV36979.DIMMONTH;
+
+db2cli writecfg add -database Blub

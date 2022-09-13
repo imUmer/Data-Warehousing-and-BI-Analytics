@@ -1,0 +1,1 @@
+A staging area can have many functions. Some typical ones include integration, change detection, scheduling, data cleansing and validation, aggregating data, and normalizing data. What does aggregating data mean
