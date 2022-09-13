@@ -865,7 +865,14 @@ Scroll down and click **Launch**.
 
 
 
+## Exercise 2 : Working with Advanced Cognos Analytics Dashboard Capabilities
+In this exercise, you will practice some advanced Cognos Analytics dashboard capabilities.
 
+- Task A : Create Calculations
+- Task B : Keep/Exclude Data Points from a visualization
+- Task C : Set Top/Bottom on a visualization
+- Task D : Create and Leverage Navigation Paths
+- Task E : Filter Data in Current tab
 
 
 
