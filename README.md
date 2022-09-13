@@ -902,6 +902,8 @@ In this exercise, you will practice some advanced Cognos Analytics dashboard cap
 4. To save the current work in the dashboard, press CTRL+S.
 5. Your Panel 3 widget should look like the one below:
 
+![alt](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%206%20-%20%20Advanced%20Dashboard%20Capabilities%20in%20Cognos%20Analytics/images/2.B.5.png)
+
 
 
 
