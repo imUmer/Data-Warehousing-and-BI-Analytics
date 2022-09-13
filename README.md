@@ -894,7 +894,17 @@ In this exercise, you will practice some advanced Cognos Analytics dashboard cap
 ![alt](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%206%20-%20%20Advanced%20Dashboard%20Capabilities%20in%20Cognos%20Analytics/images/2.A.9.png)
 
 
-	
+# Task B : Keep/Exclude Data Points from a Visualization
+1. On the Data Source panel, expand CustomerLoyaltyProgram.csv, if needed. From the Data Source panel, press CTRL and select Revenue, Product Line and drag it to the center of Panel 3, releasing it once you see the drop zone turn blue.
+
+2. From the Data Source panel, press select Location Code and drag it to the drop zone of Color of Panel 3.
+3. Right-click on the Suburban data point of the panel 3 visualization. Select Exclude.
+4. To save the current work in the dashboard, press CTRL+S.
+5. Your Panel 3 widget should look like the one below:
+
+
+
+
 
 
 
