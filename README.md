@@ -860,7 +860,8 @@ Scroll down and click **Launch**.
 # Hands-on Lab: Advanced Dashboard Capabilities in Cognos Analytics
 [Lab Assesment here](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%206%20-%20%20Advanced%20Dashboard%20Capabilities%20in%20Cognos%20Analytics/instructions.md.html)
 
-
+## Finally, your dashboard should look like below:
+![alt](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%206%20-%20%20Advanced%20Dashboard%20Capabilities%20in%20Cognos%20Analytics/images/2.png)
 
 
 
