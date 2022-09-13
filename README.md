@@ -876,9 +876,25 @@ In this exercise, you will practice some advanced Cognos Analytics dashboard cap
 
 
 
+# Task A : Create Calculations
+1. From the Navigation panel, select Sources to open the data source panel, if it is not already open. The Data Source panel displays the uploaded file “CustomerLoyaltyProgram.csv” as the Selected Source.
+
+2. Right-click on the CustomerLoyaltyProgram.csv of data source panel and select Calculation.
+
+![alt](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%206%20-%20%20Advanced%20Dashboard%20Capabilities%20in%20Cognos%20Analytics/images/2.A.2.png)
+
+3. Name the calculation as "Margin". From panel Components to the field Expression, drag and drop Unit_Sale_Price, type minus - and then drag and drop Unit_Cost. Click OK.
+4. On the Data Source panel, expand CustomerLoyaltyProgram.csv, if needed. From the Data Source panel, select Margin and drag it to the center of Panel 2, releasing it once you see the drop zone turn blue.
+5. Click on the Summary chart in Panel 2 to bring it into focus. Right-click on the Summary chart in Panel 2 and select Summarize. Then select Average.
+6. Right-click on the Summary chart in Panel 2 and select Format. Then select Currency. Finally select $(USD) as the currency.
+7. Click on the Summary chart in Panel 2 if needed to bring it into focus. From the on-demand toolbar, click Edit the title. Enter the title "Average Margin" to the visualization.
+8. To save the current work in the dashboard, press CTRL+S.
+9. Your Panel 2 widget should look like the one below:
+
+![alt](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%206%20-%20%20Advanced%20Dashboard%20Capabilities%20in%20Cognos%20Analytics/images/2.A.9.png)
 
 
-
+	
 
 
 
