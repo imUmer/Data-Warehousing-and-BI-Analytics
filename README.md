@@ -967,9 +967,18 @@ You will now see the table listed on the left panel with all the attributes.
 6- Optionally, try to change the properties and settings to see how the dashboard changes. You can also observe the billed amount changing as you click on a region on the heat map or the bar graph.
 
 
+# Hands-on Lab: Analyzing Data With Cognos Analytics.
 
+## Objective for Exercise:
 
+To create a dashboard with Billing data using IBM Cognos Analytics and analyze the regionwise spend.
 
+Note: Click on the data link. Right-click and choose Save AS.... Save the file in your local system as Billing-data.csv.
+
+## Task 1 - Connect to IBM Cognos Analytics.
+
+1- Go to IBM Cognos Analytics, login with your IBM Cloud credentails and launch Data visualization.
+2- Choose the Upload data option and select the Billing_data.csv stored in your system.
 
 
 
