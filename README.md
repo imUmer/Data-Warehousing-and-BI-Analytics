@@ -918,6 +918,53 @@ Prior to starting this lab please ensure you have completed the previous labs to
 If you have service credentails created, skip steps 1 and 2.
 
 1- Click on **Service Credentials** and create new credentials.
+2- Give the credential a name and Manager privilige and add it.
+3- Click on the down arrow next to the credential. You will see the credential details. Make a note of the username, password and jdbc connection url. These will be used in later part of the lab to connect from Cognos.
+4- Go to the data link. Right-click and choose Save AS.... Save the file in your local system as cloud-billing-dataset.csv.
+5- Once the instance is created from the db2 instance page, choose Manage from the left menu and click on Go to UI.
+6- Click on the Data icon on the left menu, choose Load Data and broswe and select the file, cloud-billing-dataset.csv which you saved in your local system.
+7- Choose the Schema, click on New Table + and create a new table with the name BillingData and click on Create.
+8- You will see the table is added to the schema. Click on Next to load the data from the file.
+9- The table is loaded. You will see that each column has data type and column width auto generated based on the content. Edit column attributes by clicking on the pencil icon next to the respective attributes to change the width of country column to varchar of 30 and month column to varchar of 7.
+10- Once the column attributes are changed, check to see if it reflects and then click on Next
+11- Review the settings and click on Begin Load to load the data.
+12- If the data is successfully loaded, you get a message on the screen indicating the number of rows that have been loaded.
+
+## Task 2 - Connect Cognos to DB2
+1- Go to myibm.ibm.com, login with your IBM Cloud credentails and launch Cognos Analytics.
+2- Choose the hambuger menu on the upper left and select Manage.
+3- Choose the Data Server Connection.
+4- Click on + to add a data server and choose IBM DB2 from the list shown.
+5- Choose to Connect Anonymously and enter the jdbc url with your db2 user name and password that you copied earlier in Task 1. Click on Test to test the connection.
+6- f the test succeeded and Cognos managed to connect to the Db2 instance, you will see Success with a green tick next to it. Click on the pencil icon, give the connection a name,MyDB2, and save it.
+7- Go to the Schema and click on the '...' next to the schema name. Choose Load Metadata from the menu that appears.
+8- Once the metadata is loaded you will see a green check mark next to the schema name and it will also indicate how many tables are available in the schema for analysis.
+
+## Task 3 - Create Data Module in Cognos
+1- From the menu, choose New and then from the submenu choose Data Module.
+2- Click the Data servers icon and choose the MyDB2 connection that we created in the previous task.
+3- Choose the schema from where you want to load data.
+4- Choose the Select Tables option and click OK.
+5- It will list the tables available in the schema. For this lab, we will use the Billing data table. Choose the table and click on OK. If you want to view the data you may click on Refresh.
+6- The Data module loaded with the data appears. Click on Save, once you see that the data is correctly loaded.
+7- You can now save it with an appropriate name under My Content.
+
+## Task 4 - Create Dashboard
+1- From the IBM Cognos menu, choose, New and click on Dashboard.
+2- Choose the Tabbed as shown in the following image.
+3- Click on Select Source to choose the source for the template.
+4- From the list, choose the data module we just created and click on Add.
+
+## Task 5 - Visualization
+
+You will now see the table listed on the left panel with all the attributes.
+
+1- Drag and drop the Billed Amount on the template.
+2- The total billed amount will now appear on the Dashboard. The size and position can be adjusted as per requirement and the text display can be edited and formatted by double-clicking on it.
+3- Drag and drop Billed Amount and Industry onto the dashboard as shown in the following image. With this, we can visualize the build amount per industry.
+4- Drag and drop Billed Amount, Country and Industry onto the dashboard as shown in the following image. This will generate a heat map of spending by country and by industry.
+5- The finished dashboard will appear as in the following image.
+6- Optionally, try to change the properties and settings to see how the dashboard changes. You can also observe the billed amount changing as you click on a region on the heat map or the bar graph.
 
 
 
