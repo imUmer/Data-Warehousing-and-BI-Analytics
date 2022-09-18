@@ -973,17 +973,27 @@ You will now see the table listed on the left panel with all the attributes.
 
 To create a dashboard with Billing data using IBM Cognos Analytics and analyze the regionwise spend.
 
-Note: Click on the data link. Right-click and choose Save AS.... Save the file in your local system as Billing-data.csv.
+> Note: Click on the data link. Right-click and choose Save AS.... Save the file in your local system as Billing-data.csv.
 
 ## Task 1 - Connect to IBM Cognos Analytics.
 
 1- Go to IBM Cognos Analytics, login with your IBM Cloud credentails and launch Data visualization.
 2- Choose the Upload data option and select the Billing_data.csv stored in your system.
+3- If the data is loaded successfully it shows a successfully loaded.
+4- Go to Recent and right Click on Billing_data.csv and click on create dashboard.
+5- Choose to a dashboard and Click on Create.
 
+## Task 2 - Visualization
+You will now see the table listed on the left panel with all the attributes.
 
+1- Drag and drop the Billed Amount on the template.
+2- The total billed amount will now appear on the Dashboard. The size and position can be adjusted as per requirement and the text display can be edited and formatted by double-clicking on it.
+3- Drag and drop Billed Amount and Industry onto the dashboard as shown in the following image. With this, we can visualize the build amount per industry.
+4- Drag and drop Billed Amount, Country and Industry onto the dashboard as shown in the following image. This will generate a heat map of spending by country and by industry.
+5- The finished dashboard will appear as in the following image.
+6- Optionally, try to change the properties and settings to see how the dashboard changes. You can also observe the billed amount changing as you click on a region on the heat map or the bar graph.
 
-
-
+![alt](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/BIWorkaroundFiles/week3/images/billed-amount-industry-country-value.png)
 
 
 
